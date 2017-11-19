@@ -8,6 +8,9 @@ import {List, ListItem} from 'material-ui/List';
 import Star from 'material-ui/svg-icons/toggle/star';
 import Genre from 'material-ui/svg-icons/image/style';
 import Story from 'material-ui/svg-icons/maps/local-library';
+import Language from 'material-ui/svg-icons/action/language';
+import Title from 'material-ui/svg-icons/editor/title';
+import Participant from 'material-ui/svg-icons/action/perm-identity';
 
 import TitleService from '../../services/TitleService';
 
@@ -24,6 +27,9 @@ export default class TitleItem extends React.Component {
 			awards: [],
 			genres: [],
 			story_lines: [],
+			participants: [],
+			other_langauges: [],
+			other_titles: [],
 			onGetDetail: this.onGetDetail,
 			onResetDetail: this.onResetDetail
 		}
@@ -37,7 +43,6 @@ export default class TitleItem extends React.Component {
 				(rs) => rs.json()
 					.then(  
 						(data) => { 
-							console.log('data: ', data);
 							this.setState({ 
 								currentDetail: data,
 								expanded: true
@@ -46,6 +51,9 @@ export default class TitleItem extends React.Component {
 							this.getAwards();
 							this.getGenres();
 							this.getStoryLine();
+							this.getParticipants();
+							this.getOtherLang();
+							this.getOtherTitle();
 					 }) 
 			)
 			.catch( (er) => console.error('error: ', er) )
@@ -131,8 +139,70 @@ export default class TitleItem extends React.Component {
 		})
 	}
 
+	getParticipants = () => {
+
+		const { participants } = this.state.currentDetail;
+
+		if(participants.length === 0) return;
+
+		const participants_listed = participants.map( 
+					(participant, index) => (
+		                <ListItem
+		                  	key={index}
+		                  	primaryText={participant}
+		                />
+					)
+				)
+
+
+		this.setState({
+			participants: [participants_listed]
+		})
+	}
+
+	getOtherLang = () => {
+
+		const { other_langauges } = this.state.currentDetail;
+
+		if(other_langauges.length === 0) return;
+
+		const other_lang_listed = other_langauges.map( 
+					(other_lang, index) => (
+		                <ListItem
+		                  key={index}
+		                  primaryText={other_lang}
+		                />
+					)
+				)
+
+
+		this.setState({
+			other_langs: [other_lang_listed]
+		})
+	}
+
+	getOtherTitle = () => {
+
+		const { other_titles } = this.state.currentDetail;
+
+		if(other_titles.length === 0) return;
+
+		const other_title_listed = other_titles.map( 
+					(other_title, index) => (
+		                <ListItem
+		                  key={index}
+		                  primaryText={other_title}
+		                />
+					)
+				)
+
+
+		this.setState({
+			other_titles: [other_title_listed]
+		})
+	}
+
 	componentDidMount(){
-		console.log('setting states');
 		this.setState({
 			awards: [
 				<ListItem
@@ -151,6 +221,24 @@ export default class TitleItem extends React.Component {
 		        	key={0}
                   	primaryText='No Story Lines'
                 />,
+			],
+			participants: [
+				<ListItem
+		        	key={0}
+                  	primaryText='No Participants'
+                />,
+			],
+			other_langauges: [
+				<ListItem
+		        	key={0}
+                  	primaryText='English'
+                />,
+			],
+			other_titles: [
+				<ListItem
+		        	key={0}
+                  	primaryText='No Other Titles'
+                />,
 			]
 		})
 	}
@@ -166,22 +254,40 @@ export default class TitleItem extends React.Component {
 			    <CardText className='detail' expandable={true}>
 			    	<List className='detail-list-container'>
 			    		<ListItem 
-			    			primaryText='Awards' 
+			    			primaryText={ <b>Awards</b> } 
 			    			leftIcon={<Star />}
 			    			initiallyOpen={false}
 			              	nestedItems={this.state.awards}
 			    		/>
 			    		<ListItem 
-			    			primaryText='Genres' 
+			    			primaryText={ <b>Genres</b> }  
 			    			leftIcon={<Genre />}
 			    			initiallyOpen={false}
 			              	nestedItems={this.state.genres}
 			    		/>
 			    		<ListItem 
-			    			primaryText='Story Lines' 
+			    			primaryText={ <b>Languages Produced</b> }  
+			    			leftIcon={<Language />}
+			    			initiallyOpen={false}
+			              	nestedItems={this.state.other_langs}
+			    		/>
+			    		<ListItem 
+			    			primaryText={ <b>Other Titles</b> }  
+			    			leftIcon={<Title />}
+			    			initiallyOpen={false}
+			              	nestedItems={this.state.other_titles}
+			    		/>
+			    		<ListItem 
+			    			primaryText={ <b>Story Lines</b> } 
 			    			leftIcon={<Story />}
 			    			initiallyOpen={false}
 			              	nestedItems={this.state.story_lines}
+			    		/>
+			    		<ListItem 
+			    			primaryText={ <b>Participants</b> }  
+			    			leftIcon={<Participant />}
+			    			initiallyOpen={false}
+			              	nestedItems={this.state.participants}
 			    		/>
 			    	</List>
 			    </CardText>

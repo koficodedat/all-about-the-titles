@@ -13,7 +13,6 @@
 
 .detail{
 	display: grid;
-	justify-items: left;
 	align-items: center;
 }
 
