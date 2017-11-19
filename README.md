@@ -17,7 +17,7 @@ Node v7.7.1
   - Sever: Will create an application server at port 4000
   
 # Searching:
-- Searching is automatic and will fetch data on key strokes
+- Searching is by title name and automatic and will fetch data on key strokes
   
 # Detail:
 - Detail gives a summary of the Titles in an inner list form.
