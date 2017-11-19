@@ -22,7 +22,7 @@ router.route('/all')
 	})
 
 const searchTitle = ( title_name ) => {
-	const criteria = title_name == '' ? '' : `${title_name}%`
+	const criteria = title_name == '' ? '' : `%${title_name}%`
 	return pgClient.query(`select * from title where lower(title_name) like lower('${criteria}')`);
 }
 
