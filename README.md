@@ -1,6 +1,9 @@
 # All About The Titles
 Web App for Searching Movie Titles
 
+# Prerequisite:
+Node v7.7.1
+
 # Running:
 - Clone Repository
 - Go to the root of the project
