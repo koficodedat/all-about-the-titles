@@ -1,8 +1,7 @@
 import React from 'react';
 import './TitleItem.css';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import {Card, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import {List, ListItem} from 'material-ui/List';
 
@@ -29,8 +28,6 @@ export default class TitleItem extends React.Component {
 	}
 
 	getDetail = () => {
-
-		console.log('here');
 
 		this.titleService
 			.getDetail( this.props.title.id )

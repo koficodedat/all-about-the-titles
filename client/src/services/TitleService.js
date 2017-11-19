@@ -3,8 +3,6 @@ const baseUrl = 'http://localhost:4000/api/title';
 
 export default class TitleService{
 
-	constructor(){}
-
 	searchTitles( criteria ): Array {
 		const headers = new Headers({ 'Content-Type': 'application/json' })
 		const request = buildRequest(baseUrl + '/', 'POST', headers, { criteria: criteria } )
