@@ -6,6 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {List, ListItem} from 'material-ui/List';
 
 import Star from 'material-ui/svg-icons/toggle/star';
+import Genre from 'material-ui/svg-icons/image/style';
+import Story from 'material-ui/svg-icons/maps/local-library';
 
 import TitleService from '../../services/TitleService';
 
@@ -171,13 +173,13 @@ export default class TitleItem extends React.Component {
 			    		/>
 			    		<ListItem 
 			    			primaryText='Genres' 
-			    			leftIcon={<Star />}
+			    			leftIcon={<Genre />}
 			    			initiallyOpen={false}
 			              	nestedItems={this.state.genres}
 			    		/>
 			    		<ListItem 
 			    			primaryText='Story Lines' 
-			    			leftIcon={<Star />}
+			    			leftIcon={<Story />}
 			    			initiallyOpen={false}
 			              	nestedItems={this.state.story_lines}
 			    		/>
