@@ -13,8 +13,8 @@ Web App for Searching Movie Titles
   - Client: Will create a web server at port 3000 and open a browser at http://localhost:3000/
   - Sever: Will create an application server at port 4000
   
-  # Searching:
-  - Searching is automatic and will fetch data on key strokes
+# Searching:
+- Searching is automatic and will fetch data on key strokes
   
-  # Detail:
-  - Detail gives a summary of the Titles in an inner list form.
+# Detail:
+- Detail gives a summary of the Titles in an inner list form.
