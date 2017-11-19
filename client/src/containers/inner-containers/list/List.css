@@ -1,0 +1,8 @@
+.list-container{
+	display: grid;
+	justify-items: center;
+}
+
+.list{
+	width: 90%;
+}

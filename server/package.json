@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for titles app",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kofi Nedjoh <koficodedat@gmail.com> (http://kofinedjoh.org/)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "express": "4.16.2",
+    "morgan": "1.9.0",
+    "pg": "7.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-watch": "2.0.7"
+  }
+}
