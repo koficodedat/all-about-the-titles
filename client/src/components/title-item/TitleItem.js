@@ -125,11 +125,10 @@ export default class TitleItem extends React.Component {
 		                <ListItem
 		                	className='story-line'
 		                  	key={index}
-		                  	primaryText={storyline_type}
-		                  	secondaryText={
-		                  	<p>{storyline_descriptions[index]}</p>
-		                  }
-		                />
+		                  	primaryText={<span className='story-type'> {storyline_type} </span>}
+		                >
+		                	<p>{storyline_descriptions[index]}</p>
+		                </ListItem>
 					)
 				)
 

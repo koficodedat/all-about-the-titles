@@ -22,13 +22,13 @@
 	grid-template-rows: auto;
 }
 
+.story-type{
+	font-style: italic;
+}
+
 .story-line{
-	margin: 0 auto;
-	max-width: 80vw;
-	height: 100px !important;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	hyphens: auto;
+	display: grid;
+	max-width: 90vw;
 }
 
 .item{
